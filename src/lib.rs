@@ -34,17 +34,15 @@
 //! ```
 
 extern crate ieee754;
-extern crate revord;
 extern crate ordered_float;
 extern crate num;
 
 use std::fmt;
 use std::iter::FromIterator;
-use std::cmp::max;
+use std::cmp::{Reverse, max};
 use std::mem::swap;
 use std::default::Default;
 use std::num::Wrapping;
-use revord::RevOrd;
 use ieee754::Ieee754;
 use ordered_float::NotNaN;
 use num::Bounded;
@@ -285,7 +283,7 @@ macro_rules! radix_wrapper_impl {
     }
 }
 
-radix_wrapper_impl!(RevOrd);
+radix_wrapper_impl!(Reverse);
 radix_wrapper_impl!(Wrapping);
 
 macro_rules! radix_int_impl {
